@@ -1,0 +1,183 @@
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 0rem;
+}
+
+
+.background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 100%;
+}
+
+
+.bottomGradient {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  mix-blend-mode: multiply;
+
+  width: 100%;
+  height: 260px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    #000000 100%
+  );
+
+  opacity: 1;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+
+.content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  width: 160px;
+  margin-bottom: 2rem;
+}
+
+
+.title {
+  color: white;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 120%;
+  text-transform: capitalize;
+  max-width: 80rem;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  color: white;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 120%;
+  max-width: 48rem;
+}
+
+
+.searchBox {
+  margin-top: 3rem;
+  width: 320px;
+  max-width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 100px;
+  backdrop-filter: blur(46px);
+  box-shadow: 0px 9.9px 13.2px #00000029;
+  border: 1px solid #34B5E5;
+  background: linear-gradient(
+    214.25deg,
+    rgba(255, 255, 255, 0.048) 6.73%,
+    rgba(255, 255, 255, 0.048) 100.28%
+  );
+  border-image: radial-gradient(69.43% 69.43% at 50% 50%, rgba(255,255,255,0.43) 0%, rgba(255,255,255,0) 100%),
+                radial-gradient(60% 51.57% at 50% 50%, rgba(53,48,46,0.23) 0%, rgba(227,205,75,0) 100%),
+                radial-gradient(54.8% 53% at 50% 50%, #FFFFFF 0%, rgba(21,21,21,0) 100%),
+                linear-gradient(0deg, #34B5E5, #34B5E5);
+  border-image-slice: 1;
+}
+
+.searchIcon {
+  width: 30px;
+  height: auto;
+}
+
+.searchInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Botones */
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  width: 130px;
+  height: 40px;
+  font-size: 12px;
+  padding: 5px 20px;
+  border-radius: 100px;
+  color: #34B5E5;
+  font-weight: 600;
+  background: linear-gradient(
+    214.25deg,
+    rgba(255, 255, 255, 0.048) 6.73%,
+    rgba(255, 255, 255, 0.048) 100.28%
+  );
+  border: 1px solid #34B5E5;
+  backdrop-filter: blur(46px);
+  box-shadow: 0px 9.9px 13.2px #00000029;
+  border-image: radial-gradient(69.43% 69.43% at 50% 50%, rgba(255,255,255,0.43) 0%, rgba(255,255,255,0) 100%),
+                radial-gradient(60% 51.57% at 50% 50%, rgba(53,48,46,0.23) 0%, rgba(227,205,75,0) 100%),
+                radial-gradient(54.8% 53% at 50% 50%, #FFFFFF 0%, rgba(21,21,21,0) 100%),
+                linear-gradient(0deg, #34B5E5, #34B5E5);
+  border-image-slice: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background: #34B5E5;
+  color: #FFFFFF;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 40px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,127 @@
+.footer {
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.footerContent {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 83px 240px; 
+  display: flex;
+  gap: 90px; 
+  box-sizing: border-box;
+}
+
+/* IZQUIERDA */
+
+.description {
+  font-family: "Saira", sans-serif;
+  font-size: 16px;
+  line-height: 140%;
+  margin-bottom: 30px;
+  width: 360px; 
+}
+
+/* REDES */
+.socials {
+  display: flex;
+  gap: 14px;
+}
+
+.socials img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.socials img:hover {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(67%)
+    saturate(574%) hue-rotate(161deg);
+}
+
+
+/* SERVICIOS */
+.services h3,
+.quick h3 {
+  font-family: "Readex Pro", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.servicesList {
+  display: flex;
+  gap: 50px;
+}
+
+.servicesList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.servicesList li {
+  font-family: "Saira", sans-serif;
+  font-size: 16px;
+  line-height: 34px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.servicesList li:hover {
+  color: #34B5E5;
+}
+
+/* QUICK */
+.quick {
+  width: 320px; 
+}
+
+.quick ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quick li {
+  font-family: "Saira", sans-serif;
+  font-size: 16px;
+  line-height: 34px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.quick li:hover {
+  color: #34B5E5;
+}
+
+/* BARRA AZUL */
+.bottomBar {
+  width: 100%;
+  background: #34B5E5;
+}
+
+.bottomBarContent {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 15px 240px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  color: #000;
+}
+
+.bottomBar span {
+  font-family: "Saira", sans-serif;
+  font-size: 14px;
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+}

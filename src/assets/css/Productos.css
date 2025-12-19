@@ -1,0 +1,379 @@
+
+.productos-section {
+  position: relative;
+  background: #000;
+  padding: 160px 0;
+  overflow: hidden;
+}
+
+/* ===== FONDO ===== */
+.productos-fondo {
+  position: absolute;
+  width: 700px;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;        
+}
+
+
+/* ===== ELIPSES DE FONDO ===== */
+.elipse {
+  position: absolute;
+  z-index: 0;          
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+
+
+.elipse-arriba {
+  width: 100%;
+  top: -10%;
+  left: -120px;
+}
+
+
+.elipse-abajo {
+  width: 85%;
+  bottom: -8%;
+  right: -200px;
+}
+
+
+.productos-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.productos-header img {
+  width: 251px;
+  margin-bottom: 40px;
+}
+
+.productos-header h2 {
+  max-width: 504px;
+  font-family: "Palatino Linotype";
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+}
+
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  gap: 40px;
+  justify-content: center;
+}
+
+
+/* ===== CARD GLASS APPLE ===== */
+.producto-card.glass {
+    border-color: #016CB5;
+  width: 380px;
+  height: 480px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 20px 20px 0;
+  position: relative;
+
+  border-radius: 20px;
+  border-width: 1.1px;
+  border-style: solid;
+
+  background: linear-gradient(
+    214.25deg,
+    rgba(135, 41, 41, 0.032) 6.73%,
+    rgba(0, 0, 0, 0.012) 100.28%
+  );
+
+  border-image-source:
+    radial-gradient(69.43% 69.43% at 50% 50%,
+      rgba(255, 255, 255, 0.43) 0%,
+      rgba(255, 255, 255, 0) 100%),
+    radial-gradient(60% 51.57% at 50% 50%,
+      rgba(53, 48, 46, 0.23) 0%,
+      rgba(227, 205, 75, 0) 100%),
+    radial-gradient(54.8% 53% at 50% 50%,
+      #FFFFFF 0%,
+      rgba(21, 21, 21, 0) 100%),
+    linear-gradient(0deg, #016CB5, #016CB5);
+
+  border-image-slice: 1;
+
+  backdrop-filter: blur(46.18467712402344px);
+  -webkit-backdrop-filter: blur(46.18467712402344px);
+
+  box-shadow: 0px 9.9px 13.2px #00000029;
+
+  overflow: hidden; 
+}
+
+
+.producto-card.glass .medidas {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.producto-card.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.02)
+  );
+  pointer-events: none;
+}
+
+
+/* ===== BADGES ===== */
+.badges {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 4; 
+}
+
+.badge-img {
+  width: auto; 
+  height: auto;
+}
+
+
+.badge {
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.badge.nuevo {
+  background: #fff;
+  color: #000;
+}
+
+.badge.popular {
+  background: #016CB5;
+  color: #fff;
+
+}
+
+/* ===== IMAGEN ===== */
+.producto-img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+
+  margin: -10px auto 0;   
+  position: relative;
+  z-index: 2;
+}
+
+
+.producto-info,
+.features,
+.medidas {
+  position: relative;
+  z-index: 3;
+}
+
+
+.producto-info {
+  color: #fff;
+  margin-bottom: 16px; 
+}
+
+.producto-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.producto-card {
+  z-index: 2;
+}
+
+
+
+
+
+/* TU GRID ORIGINAL (3x2) SE MANTIENE */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  gap: 40px;
+  justify-content: center;
+}
+
+
+
+.precio-text {
+  font-size: 16px;
+}
+
+.features {
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;           
+  margin-bottom: 20px;
+}
+
+.precio-num {
+  color: #fff;
+}
+
+.precio-mxn {
+  color: #016CB5;
+}
+
+/* ===== FEATURES ===== */
+.features {
+  color: #fff;
+  font-size: 16px;
+}
+
+.features div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== MEDIDAS ===== */
+.medidas {
+  width: 380px;
+  height: 48px;
+  margin-top: auto;
+
+  background: #016CB5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 19px;
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
+
+.medidas div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+}
+
+.divider {
+  width: 1px;
+  height: 19px;
+  background: #ffffff66;
+}
+
+.medidas {
+  margin-top: auto;
+}
+
+/* ===== PAGINACIÓN ===== */
+.pagination {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.dot {
+  width: 41px;
+  height: 7px;
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  width: 66px;
+  height: 10px;
+  background: #34B5E5;
+}
+
+.productos-grid {
+  position: relative;
+  z-index: 2;
+}
+
+.productos-header {
+  position: relative;
+  z-index: 2;
+}
+
+.dot {
+  cursor: pointer;
+}
+
+.dot.active {
+  width: 66px;
+  height: 10px;
+  background: #34B5E5;
+  border: none;
+}
+
+
+.productos-slider {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* ===== SLIDER LIMPIO ===== */
+.productos-slider {
+  overflow: hidden; /* CLAVE */
+  display: flex;
+  justify-content: center;
+}
+
+.productos-slider {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+/* SOLO DESPLAZAMIENTO */
+/* ===== SLIDER REAL ===== */
+.productos-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.productos-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.80s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.productos-page {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}

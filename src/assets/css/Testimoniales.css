@@ -1,0 +1,104 @@
+/* ===== SECCIÓN ===== */
+.divider {
+width: 4px;
+height: 40px;
+border-radius: 10px;
+background: #34B5E5;
+}
+
+
+.estrellas span {
+font-size: 22px;
+color: #34B5E5;
+margin-left: 6px;
+}
+
+
+/* ===== RECTÁNGULO ===== */
+.rectangulo {
+position: absolute;
+bottom: -40px;
+right: -1240px;
+width: 206px;
+height: 200px;
+transform: rotate(-48.96deg);
+}
+
+
+/* ===== PAGINACIÓN ===== */
+.pagination {
+margin-top: 80px;
+display: flex;
+justify-content: center;
+gap: 12px;
+}
+
+
+.dot {
+width: 41px;
+height: 7px;
+border-radius: 10px;
+border: 1px solid #fff;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+
+.dot:hover,
+.dot.active {
+width: 66px;
+height: 10px;
+background: #34B5E5;
+border: none;
+}
+
+
+/* ===== ANIMACIÓN ===== */
+.animated {
+animation: appleSlide 0.55s ease-in-out;
+}
+
+
+@keyframes appleSlide {
+from {
+opacity: 0;
+transform: translateX(30px) scale(0.98);
+}
+to {
+opacity: 1;
+transform: translateX(0) scale(1);
+}
+}
+
+.testimoniales-wrapper {
+  width: 100%;
+}
+
+@media (min-width: 1920px) {
+  .testimoniales-scale {
+    transform: scale(1.25);
+    transform-origin: center top;
+  }
+
+  .testimoniales-wrapper {
+    min-height: 120vh;
+  }
+
+  section {
+    background-size: 2200px auto;
+  }
+}
+
+@media (min-width: 2560px) {
+  .testimoniales-scale {
+    transform: scale(1.4);
+  }
+
+  .testimoniales-wrapper {
+    min-height: 140vh;
+  }
+
+  section {
+    background-size: 2400px auto;
+  }
+}
