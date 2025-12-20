@@ -43,22 +43,33 @@ export default function Productos() {
   const [paginaActiva, setPaginaActiva] = useState(0);
   const [mobileIndex, setMobileIndex] = useState(0);
   const [showSwipeHint, setShowSwipeHint] = useState(true);
+
   const startX = useRef(0);
 
-  /* ===== SWIPE MOBILE (INFINITO SOLO HACIA ADELANTE) ===== */
+  /* ===== TOUCH START ===== */
   const onTouchStart = (e) => {
     startX.current = e.touches[0].clientX;
   };
 
+  /* ===== TOUCH END (SWIPE BIDIRECCIONAL INFINITO) ===== */
   const onTouchEnd = (e) => {
     const diff = startX.current - e.changedTouches[0].clientX;
     const total = productosMobile.length;
 
-    if (diff > 50) {
-      // 👉 Swipe izquierda → siguiente (loop al inicio)
+    // Evita micro-swipes
+    if (Math.abs(diff) < 40) return;
+
+    // Swipe izquierda → siguiente
+    if (diff > 0) {
       setMobileIndex((prev) => (prev + 1) % total);
-      setShowSwipeHint(false);
     }
+
+    // Swipe derecha → anterior
+    if (diff < 0) {
+      setMobileIndex((prev) => (prev - 1 + total) % total);
+    }
+
+    setShowSwipeHint(false);
   };
 
   return (
@@ -108,17 +119,16 @@ export default function Productos() {
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
-        {/* 👇 ICONO DE SWIPE */}
+        {/* Indicador swipe */}
         {showSwipeHint && (
           <div className="swipe-indicator">
             <div className="swipe-pill">
-              <span className="arrow left"></span>
-              <span className="hand"></span>
-              <span className="arrow right"></span>
+              <span className="arrow left" />
+              <span className="hand" />
+              <span className="arrow right" />
             </div>
           </div>
         )}
-
 
         <div
           className="productos-track"
@@ -155,16 +165,26 @@ function ProductoCard({ img }) {
       </div>
 
       <div className="features">
-        <div><img src={etiquetaAzul} alt="" /> Lorem ipsum</div>
-        <div><img src={etiquetaAzul} alt="" /> Lorem ipsum</div>
+        <div>
+          <img src={etiquetaAzul} alt="" /> Lorem ipsum
+        </div>
+        <div>
+          <img src={etiquetaAzul} alt="" /> Lorem ipsum
+        </div>
       </div>
 
       <div className="medidas">
-        <div><img src={etiquetaBlanca} alt="" /> Medidas</div>
+        <div>
+          <img src={etiquetaBlanca} alt="" /> Medidas
+        </div>
         <span className="divider" />
-        <div><img src={etiquetaBlanca} alt="" /> Medidas</div>
+        <div>
+          <img src={etiquetaBlanca} alt="" /> Medidas
+        </div>
         <span className="divider" />
-        <div><img src={etiquetaBlanca} alt="" /> Medidas</div>
+        <div>
+          <img src={etiquetaBlanca} alt="" /> Medidas
+        </div>
       </div>
     </div>
   );
