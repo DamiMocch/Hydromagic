@@ -50,6 +50,7 @@ export default function Espacios() {
 
   return (
     <section
+      id="ESPACIOS"
       className="espacios-section"
       style={{ backgroundImage: `url(${fondo})` }}
     >
@@ -60,7 +61,7 @@ export default function Espacios() {
         <div className="espacios-scale">
           <div className="espacios-container">
 
-            {/* TÍTULO */}
+            {/* ===== TÍTULO ===== */}
             <div className="espacios-title">
               <img src={titulo} alt="Espacios" />
               <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
@@ -69,7 +70,7 @@ export default function Espacios() {
             <div className="espacios-layout">
               <div className="espacios-main">
 
-                {/* IMAGEN */}
+                {/* ===== IMAGEN ===== */}
                 <img
                   key={active}
                   src={espaciosData[active].image}
@@ -79,39 +80,47 @@ export default function Espacios() {
 
                 <div className="white-divider" />
 
-                {/* RECTÁNGULO AZUL */}
-                <div className="espacios-description fade">
-                  <p>{espaciosData[active].review}</p>
-                </div>
+                {/* ===== BLOQUE INFERIOR (MOBILE) ===== */}
+                <div className="espacios-mobile-row">
 
-                {/* CARD */}
-                <div className="espacios-card">
-                  <div className="stars-wrapper stars-out">
-                    {[...Array(5)].map((_, i) => (
-                      <div
-                        key={i}
-                        className={`star-shape ${
-                          i < espaciosData[active].rating ? "filled" : ""
-                        }`}
-                      />
-                    ))}
+                  {/* RECTÁNGULO AZUL */}
+                  <div className="espacios-description fade">
+                    <p>{espaciosData[active].review}</p>
                   </div>
 
-                  <p className="card-text with-line">
-                    Lorem Ipsum Dolor Sit Amet
-                  </p>
+                  {/* CARD */}
+                  <div className="espacios-card">
+                    <div className="stars-wrapper stars-out">
+                      {[...Array(5)].map((_, i) => (
+                        <div
+                          key={i}
+                          className={`star-shape ${
+                            i < espaciosData[active].rating ? "filled" : ""
+                          }`}
+                        />
+                      ))}
+                    </div>
 
-                  <div className="clients">
-                    <img src={cliente} alt="cliente" />
+                    <p className="card-text with-line">
+                      Lorem Ipsum Dolor Sit Amet
+                    </p>
+
+                    <div className="clients">
+                      <img src={cliente} alt="cliente" />
+                    </div>
+
+                    <img
+                      src={comprar}
+                      alt="Comprar"
+                      className="buy-btn"
+                    />
                   </div>
 
-                  <img src={comprar} alt="Comprar" className="buy-btn" />
                 </div>
-
               </div>
             </div>
 
-            {/* PAGINACIÓN */}
+            {/* ===== PAGINACIÓN ===== */}
             <div className="pagination">
               {espaciosData.map((_, i) => (
                 <span
