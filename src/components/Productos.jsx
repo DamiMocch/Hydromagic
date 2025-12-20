@@ -42,28 +42,27 @@ const productosMobile = [
 export default function Productos() {
   const [paginaActiva, setPaginaActiva] = useState(0);
   const [mobileIndex, setMobileIndex] = useState(0);
+  const [showSwipeHint, setShowSwipeHint] = useState(true);
   const startX = useRef(0);
 
-  /* ===== SWIPE MOBILE ===== */
+  /* ===== SWIPE MOBILE (INFINITO SOLO HACIA ADELANTE) ===== */
   const onTouchStart = (e) => {
     startX.current = e.touches[0].clientX;
   };
 
   const onTouchEnd = (e) => {
     const diff = startX.current - e.changedTouches[0].clientX;
+    const total = productosMobile.length;
 
-    if (diff > 50 && mobileIndex < productosMobile.length - 1) {
-      setMobileIndex(mobileIndex + 1);
-    }
-
-    if (diff < -50 && mobileIndex > 0) {
-      setMobileIndex(mobileIndex - 1);
+    if (diff > 50) {
+      // 👉 Swipe izquierda → siguiente (loop al inicio)
+      setMobileIndex((prev) => (prev + 1) % total);
+      setShowSwipeHint(false);
     }
   };
 
   return (
     <section id="PRODUCTOS" className="productos-section">
-
       {/* Fondo */}
       <img src={fondo} className="productos-fondo" alt="" />
       <img src={elipseArriba} className="elipse elipse-arriba" alt="" />
@@ -101,7 +100,6 @@ export default function Productos() {
             />
           ))}
         </div>
-
       </div>
 
       {/* ===== MOBILE ===== */}
@@ -110,6 +108,18 @@ export default function Productos() {
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
+        {/* 👇 ICONO DE SWIPE */}
+        {showSwipeHint && (
+          <div className="swipe-indicator">
+            <div className="swipe-pill">
+              <span className="arrow left"></span>
+              <span className="hand"></span>
+              <span className="arrow right"></span>
+            </div>
+          </div>
+        )}
+
+
         <div
           className="productos-track"
           style={{ transform: `translateX(-${mobileIndex * 100}%)` }}
@@ -125,7 +135,7 @@ export default function Productos() {
   );
 }
 
-/* ===== CARD REUTILIZABLE ===== */
+/* ===== CARD ===== */
 function ProductoCard({ img }) {
   return (
     <div className="producto-card glass">
