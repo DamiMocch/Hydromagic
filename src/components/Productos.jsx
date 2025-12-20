@@ -20,7 +20,7 @@ import etiquetaBlanca from "../assets/img/Etiqueta_blanca.png";
 import nuevo from "../assets/img/new.png";
 import popular from "../assets/img/popular.png";
 
-/* CADA PÁGINA TIENE 6 PRODUCTOS */
+/* Cada página tiene 6 productos */
 const paginas = [
   [producto1, producto2, producto3, producto4, producto5, producto6],
   [producto6, producto5, producto4, producto3, producto2, producto1],
@@ -33,8 +33,8 @@ export default function Productos() {
   const [paginaActiva, setPaginaActiva] = useState(0);
 
   return (
-    <section className="productos-section">
-      
+    <section id="PRODUCTOS" className="productos-section">
+
       {/* Fondo */}
       <img src={fondo} className="productos-fondo" alt="" />
       <img src={elipseArriba} className="elipse elipse-arriba" alt="" />
@@ -46,14 +46,9 @@ export default function Productos() {
         <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
       </div>
 
-      {/* SLIDER REAL */}
+      {/* Slider */}
       <div className="productos-slider">
-        <div
-          className="productos-track"
-          style={{
-            transform: `translateX(-${paginaActiva * 100}%)`,
-          }}
-        >
+        <div className="productos-track" style={{ transform: `translateX(-${paginaActiva * 100}%)` }}>
           {paginas.map((pagina, index) => (
             <div key={index} className="productos-page">
               <div className="productos-grid">
@@ -80,27 +75,17 @@ export default function Productos() {
 
                     {/* Features */}
                     <div className="features">
-                      <div>
-                        <img src={etiquetaAzul} alt="" /> Lorem ipsum
-                      </div>
-                      <div>
-                        <img src={etiquetaAzul} alt="" /> Lorem ipsum
-                      </div>
+                      <div><img src={etiquetaAzul} alt="" /> Lorem ipsum</div>
+                      <div><img src={etiquetaAzul} alt="" /> Lorem ipsum</div>
                     </div>
 
                     {/* Medidas */}
                     <div className="medidas">
-                      <div>
-                        <img src={etiquetaBlanca} alt="" /> Medidas
-                      </div>
+                      <div><img src={etiquetaBlanca} alt="" /> Medidas</div>
                       <span className="divider" />
-                      <div>
-                        <img src={etiquetaBlanca} alt="" /> Medidas
-                      </div>
+                      <div><img src={etiquetaBlanca} alt="" /> Medidas</div>
                       <span className="divider" />
-                      <div>
-                        <img src={etiquetaBlanca} alt="" /> Medidas
-                      </div>
+                      <div><img src={etiquetaBlanca} alt="" /> Medidas</div>
                     </div>
 
                   </div>
@@ -114,11 +99,7 @@ export default function Productos() {
       {/* PAGINACIÓN */}
       <div className="pagination">
         {paginas.map((_, i) => (
-          <span
-            key={i}
-            className={`dot ${paginaActiva === i ? "active" : ""}`}
-            onClick={() => setPaginaActiva(i)}
-          />
+          <span key={i} className={`dot ${paginaActiva === i ? "active" : ""}`} onClick={() => setPaginaActiva(i)} />
         ))}
       </div>
 
