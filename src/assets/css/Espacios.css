@@ -5,7 +5,8 @@
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 /* ===== GRADIENTES ===== */
@@ -15,6 +16,7 @@
   width: 100%;
   height: 314px;
   background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 100%);
+  z-index: 1;
 }
 
 .gradient-bottom {
@@ -23,6 +25,17 @@
   width: 100%;
   height: 214px;
   background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 100%);
+  z-index: 1;
+}
+
+/* ===== WRAPPERS ===== */
+.espacios-wrapper {
+  overflow: visible;
+}
+
+.espacios-scale {
+  transform-origin: center top;
+  transition: transform 0.4s ease;
 }
 
 /* ===== CONTENEDOR ===== */
@@ -31,15 +44,13 @@
   z-index: 2;
   max-width: 1600px;
   margin: auto;
-  height: 100%;
   padding: 120px 40px;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
-
 
 /* ===== TÍTULO ===== */
 .espacios-title {
@@ -49,10 +60,8 @@
   text-align: center;
 }
 
-
 .espacios-title img {
   width: 175px;
-  height: 27px;
   margin-bottom: 16px;
 }
 
@@ -61,33 +70,26 @@
   font-size: 35px;
   font-weight: 700;
   line-height: 45px;
-  max-width: 498px;
-  margin: auto;
+  max-width: 500px;
 }
 
 /* ===== LAYOUT ===== */
 .espacios-layout {
   margin-top: 30px;
-  display: flex;               
+  display: flex;
   justify-content: center;
-  align-items: center;
   width: 100%;
 }
 
-
-/* ===== IMAGEN + DESCRIPCIÓN ===== */
+/* ===== MAIN ===== */
 .espacios-main {
   display: flex;
-  align-items: center;
-  justify-content: center;
-
   width: 1200px;
   height: 450px;
   position: relative;
 }
 
-
-
+/* ===== IMAGEN ===== */
 .espacios-image {
   width: 650px;
   height: 450px;
@@ -95,6 +97,7 @@
   display: block;
 }
 
+/* ===== DIVISOR ===== */
 .white-divider {
   width: 6px;
   height: 450px;
@@ -102,16 +105,12 @@
 }
 
 /* ===== PANEL AZUL ===== */
-
 .espacios-description {
   width: 250px;
   height: 450px;
   background: #016CB5;
-   padding: 32px 24px;
-  display: flex;
-  align-items: flex-start;
+  padding: 32px 24px;
 }
-
 
 /* ===== CARD ===== */
 .espacios-card {
@@ -121,27 +120,8 @@
   width: 290px;
   height: 220px;
   background: #1E1F24;
-  padding: 28px 24px 24px 36px; 
+  padding: 28px 24px 24px 36px;
 }
-
-
-.card-text.with-line {
-  position: relative;
-  padding-left: 16px; 
-  font-size: 20px;
-}
-
-.card-text.with-line::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 4px;
-  width: 3px;
-  height: 43px;
-  background: #D7984E;
-  opacity: 1;
-}
-
 
 /* ===== ESTRELLAS ===== */
 .stars-wrapper {
@@ -159,424 +139,182 @@
   gap: 6px;
 }
 
-
 .star-shape {
-  width: 24.93px;
-  height: 23.8px;
+  width: 25px;
+  height: 25px;
   background: #FFA600;
   transform: rotate(90deg) scale(0.6);
   opacity: 0.2;
-  transition: all 0.4s ease;
   clip-path: polygon(
     50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
     50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
   );
 }
 
-.stars-out {
-  position: absolute;
-  left: -22px;
-  top: 20px;
-}
-
-
 .star-shape.filled {
   opacity: 1;
   transform: rotate(90deg) scale(1);
 }
 
-/* ===== TEXTO ===== */
+/* ===== TEXTO CARD ===== */
 .card-text {
   font-family: "Palatino Linotype";
   font-size: 22px;
-}
-
-.clients {
-  margin: 12px 0;
-}
-
-.card-text,
-.clients,
-.buy-btn {
   margin-left: 12px;
 }
 
+.card-text.with-line {
+  position: relative;
+  padding-left: 16px;
+}
 
+.card-text.with-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 3px;
+  height: 43px;
+  background: #D7984E;
+}
 
-/* ===== BOTÓN ===== */
-.buy-btn {
-    width: 50%;
+/* ===== CLIENTES ===== */
+.clients {
+  margin-left: 12px;
   margin-top: 12px;
-  cursor: pointer;
-}
-
-.tinas-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.vector {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.vector:hover {
-  transform: scale(1.1);
-}
-
-.tinas-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: transform 0.6s ease;
-}
-
-.tina-btn {
-  width: 200px;
-  height: 60px;
-  background: #ffffff;
-  border-radius: 10px;
-  border: none;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding-left: 12px;
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-
-.tina-btn:hover,
-.tina-btn.active {
-  background: #34B5E5;
-
-}
-
-.tina-box {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  background: #e5e5e5;
-}
-
-.tina-text {
-  font-size: 16px;
-  opacity: 0.8;
-  color: #000;
-}
-
-.tina-btn.active .tina-text {
-  color: #fff;
 }
 
 .clients img {
   width: 50%;
-  height: auto;
 }
 
-
-.fade {
-  animation: fadeIn 0.6s ease;
+/* ===== BOTÓN ===== */
+.buy-btn {
+  width: 50%;
+  margin-left: 12px;
+  margin-top: 12px;
+  cursor: pointer;
 }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* ===== WRAPPERS ===== */
-.espacios-wrapper {
-  overflow: hidden;
-}
-
-.espacios-scale {
-  transform-origin: center top;
-  transition: transform 0.4s ease;
-}
-
-@media (min-width: 1920px) {
-  .espacios-layout {
-    justify-content: center;
-  }
-
-  .espacios-main {
-    margin: 0 auto; 
-  }
-}
-
-/* ===== 1920px ===== */
-@media (min-width: 1920px) {
-  .espacios-scale {
-    transform: scale(1.2);
-  }
-
-  .espacios-section {
-    min-height: 1200px;             
-    background-size: 2500px auto;    
-    background-position: center top;
-    height: 1100px;             
-    background-size: 2500px auto;
-  }
-
-  .espacios-wrapper {
-    min-height: 120vh;
-  }
-
-   .espacios-container {
-    max-width: 2000px;
-  }
-
-  .espacios-main {
-    width: 1400px;
-    height: 520px;
-  }
-
-  .espacios-image {
-    width: 760px;
-    height: 520px;
-  }
-
-  .white-divider {
-    height: 520px;
-  }
-
-  .espacios-description {
-    height: 520px;
-    width: 300px;
-  }
-
-  .espacios-title img {
-  width: 500px;
-}
-
-  .espacios-card {
-    width: 340px;
-    height: 260px;
-    right: 220px;
-    top: 280px;
-  }
-
-  .espacios-title img {
-    width: 220px;
-    height: auto;
-  }
-
-  .espacios-title h1 {
-    font-size: 44px;
-    line-height: 56px;
-    max-width: 650px;
-  }
-
-  .card-text {
-    font-size: 26px;
-  }
-}
-
 
 /* ===== PAGINACIÓN ===== */
 .pagination {
-margin-top: 80px;
-display: flex;
-justify-content: center;
-gap: 12px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  z-index: 10;
 }
-
 
 .dot {
-width: 41px;
-height: 7px;
-border-radius: 10px;
-border: 1px solid #fff;
-cursor: pointer;
-transition: all 0.3s ease;
+  width: 41px;
+  height: 7px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-
-.dot:hover,
 .dot.active {
-width: 66px;
-height: 10px;
-background: #34B5E5;
-border: none;
+  width: 66px;
+  height: 10px;
+  background: #34B5E5;
+  border: none;
 }
 
-
-
-/* ===== 2560px / 4K ===== */
-@media (min-width: 2560px) {
-  .espacios-scale {
-    transform: scale(1.35);
-  }
-
-    .espacios-title img {
-  width: 500px;
-}
-
-  .espacios-section {
-    min-height: 1400px;
-    background-size: 2600px auto;
-    height: 1300px;
-    background-size: 2700px auto;
-  }
-
-  .espacios-wrapper {
-    min-height: 140vh;
-  }
-
-  .espacios-container {
-    max-width: 2400px;
-  }
-
-  .espacios-main {
-    width: 1600px;
-    height: 600px;
-  }
-
-  .espacios-image {
-    width: 900px;
-    height: 600px;
-  }
-
-  .white-divider {
-    height: 600px;
-  }
-
-  .espacios-description {
-    height: 600px;
-    width: 340px;
-  }
-
-  .espacios-card {
-    width: 380px;
-    height: 300px;
-    right: 260px;
-    top: 320px;
-  }
-
-  .espacios-title img {
-    width: 260px;
-  }
-
-  .espacios-title h1 {
-    font-size: 52px;
-    line-height: 64px;
-    max-width: 760px;
-  }
-
-  .card-text {
-    font-size: 30px;
-  }
-}
+/* ================================================= */
+/* =================== MOBILE ====================== */
+/* ================================================= */
 
 @media (max-width: 768px) {
 
+  .espacios-container {
+    padding: 80px 16px 40px;
+    justify-content: flex-start;
+  }
+
   .espacios-main {
     width: 100%;
-    display: flex;
+    height: auto;
     flex-direction: column;
   }
 
-  /* IMAGEN */
   .espacios-image {
-    margin-top: -20px;
     width: 100%;
     height: auto;
-    display: block;
   }
 
-  /* OCULTAR DIVISOR */
   .white-divider {
     display: none;
   }
 
-  /* FILA UNIDA (AZUL + CARD) */
+  /* FILA AZUL + CARD */
   .espacios-mobile-row {
     display: flex;
     width: 100%;
   }
 
-  /* RECTÁNGULO AZUL */
   .espacios-description {
     width: 50%;
     height: 120px;
     padding: 12px;
-    margin: 0;
-    background: #016CB5;
   }
 
-  /* TEXTO DEL RECTÁNGULO AZUL */
   .espacios-description p {
-    font-size: 12px;       
+    font-size: 12px;
     line-height: 14px;
   }
 
-  /* CARD NEGRA */
   .espacios-card {
     position: relative;
     width: 50%;
     height: 120px;
-    padding: 12px 12px 12px 10px; 
+    padding: 12px;
     top: auto;
     right: auto;
   }
 
- 
   .stars-wrapper {
-    display: flex;
-    position: absolute;
     left: -12px;
     top: 12px;
     width: 20px;
-    height: 85px;          
-    z-index: 5;
-    gap: 1px;
+    height: 80px;
+    gap: 2px;
   }
 
   .star-shape {
-    width: 15px;            
-    height: 17px;
+    width: 14px;
+    height: 14px;
     transform: rotate(90deg) scale(0.65);
   }
 
-  /* TEXTO CARD */
   .card-text {
-    font-size: 14px !important;        
-    line-height: 16px !important;
+    font-size: 13px;
+    line-height: 15px;
   }
 
-  /* IMAGEN CLIENTES */
-  .clients img {
-    margin-top: 20px;
-    width: 50%;             
-  }
-
-  /* BOTÓN COMPRAR */
+  .clients img,
   .buy-btn {
-    width: 45%;            
-    margin-top: -5px;
+    width: 45%;
   }
 
-  .card-text.with-line::before {
-  top: 4px;
-  width: 3px;
-  height: 30px;
-  background: #D7984E;
-}
+  /* PAGINACIÓN MOBILE */
+  .pagination {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
 
-.pagination {
-margin-top: -100px !important;
-}
+  .dot {
+    width: 30px;
+    height: 6px;
+  }
 
-.espacios-title h1{
-  font-size: 24px;
-}
+  .dot.active {
+    width: 48px;
+    height: 8px;
+  }
 
+  .espacios-title h1 {
+    font-size: 24px;
+    line-height: 28px;
+  }
 }
