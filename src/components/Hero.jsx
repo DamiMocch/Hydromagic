@@ -3,59 +3,75 @@ import logoBg from "../assets/img/header2.png";
 import logo from "../assets/img/HeaderLogo.png";
 import circle from "../assets/img/circle.png";
 
-export default function Header() {
-    return (
-        <header className={styles.header}>
+export default function Inicio() {
+  return (
+    <section className={styles.header} id="INICIO">
 
-            {/* IMAGEN DE FONDO */}
-            <img src={logoBg} alt="Background" className={styles.background} />
+      {/* IMAGEN DE FONDO */}
+      <img
+        src={logoBg}
+        alt="Background"
+        className={styles.background}
+      />
 
-            {/* OVERLAY */}
-            <div className={styles.overlay}></div>
+      {/* OVERLAY OSCURO */}
+      <div className={styles.overlay}></div>
 
-            {/* GRADIENTE INFERIOR */}
-            <div className={styles.bottomGradient}></div>
+      {/* GRADIENTE INFERIOR */}
+      <div className={styles.bottomGradient}></div>
 
-            {/* CONTENIDO */}
-            <div className={styles.content}>
+      {/* ⬇️ EXTENSIÓN NEGRA (SOLO MOBILE POR CSS) */}
+      <div className={styles.mobileBlackExtension}></div>
 
-                {/* LOGO */}
-                <img src={logo} alt="Hydromagic Logo" className={styles.logo} />
+      {/* CONTENIDO */}
+      <div className={styles.content}>
 
-                {/* TITULO */}
-                <h1 className={styles.title}>
-                    Lorem Ipsum Dolor Sit Amet,
-                    <br />
-                    Consectetur adipiscing elit
-                </h1>
+        {/* LOGO */}
+        <img
+          src={logo}
+          alt="Hydromagic Logo"
+          className={styles.logo}
+        />
 
-                {/* SUBTITULO */}
-                <p className={styles.subtitle}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                </p>
+        {/* TÍTULO */}
+        <h1 className={styles.title}>
+          Lorem Ipsum Dolor Sit Amet,
+          <br />
+          Consectetur Adipiscing Elit
+        </h1>
 
-                {/* BUSCADOR */}
-                <div className={styles.searchBox}>
-                    <input
-                        type="text"
-                        placeholder="Buscar..."
-                        className={styles.searchInput}
-                    />
-                    <img src={circle} alt="icon" className={styles.searchIcon} />
-                </div>
+        {/* SUBTÍTULO */}
+        <p className={styles.subtitle}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+        </p>
 
+        {/* BUSCADOR */}
+        <div className={styles.searchBox}>
+          <input
+            type="text"
+            placeholder="Tinas de hidromasajes"
+            className={styles.searchInput}
+          />
+          <img
+            src={circle}
+            alt="Buscar"
+            className={styles.searchIcon}
+          />
+        </div>
 
-                {/* BOTONES */}
-                <div className={styles.buttons}>
-                    {["BUTTON TEXT", "BUTTON TEXT", "BUTTON TEXT"].map((text, index) => (
-                        <button key={index} className={styles.button}>
-                            {text}
-                        </button>
-                    ))}
-                </div>
+        {/* BOTONES */}
+        <div className={styles.buttons}>
+          {["BUTTON TEXT", "BUTTON TEXT", "BUTTON TEXT"].map((text, index) => (
+            <button
+              key={index}
+              className={styles.button}
+            >
+              {text}
+            </button>
+          ))}
+        </div>
 
-
-            </div>
-        </header>
-    );
+      </div>
+    </section>
+  );
 }
