@@ -466,8 +466,166 @@
 
 @media (max-width: 640px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;       
+    justify-items: center;            
+    margin: 0 auto;                   
+    gap: 20px;                        
+  }
+
+  .card {
+    width: 90%;
+    height: 320px;                       
+    max-width: 300px;                 
+  }
+
+  .glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1100px;
+  height: 600px;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 900px;
+  max-width: 722px;
+
+}
+
+}
+
+@media (max-width: 640px) {
+
+  .nosotrosContainer {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    margin: 0 auto;
+    gap: 30px;             
+    padding: 0 0px;
+    margin-top: 90px;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 10px;
+  }
+
+  .nosotrosTitleImg {
+    width: 150px; 
+    margin-left: 0;
+  }
+
+  .nosotrosTitleText {
+    width: 100%;
+    margin-left: 0;
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  
+  .imageGroup {
+    position: relative;
+    width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .artFondo3 {
+    position: absolute;
+    width: 290px;
+    height: 381px;
+    left: -120px;
+    top: -100px;
+  }
+
+  .nosotrosImg2 {
+    width: 328px;
+    max-width: 300px;
+    height: 255px;
+    border-radius: 20px;
+    position: relative;
+    left: 0;
+    z-index: 2;
+  }
+
+  .smallText {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+
+
+
+  .centerText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.centerText p,
+.nosotrosButton {
+  position: relative;
+  width: 328px;
+  left: 0px;
+}
+
+
+.nosotrosButton {
+  top: 10px;
+  width: 234px;
+  height: 53px;
+  cursor: pointer;
+  left: 0px;
+}
+
+
+ 
+  .artFondo2 {
+    position: absolute;
+    width: 60px;
+    top: 10px;
+    left: 280px;
+  }
+
+   .artFondo1{
+    position: absolute;
+    width: 60px;
+    top: 210px;
+    left: 280px;
+   }
+
+  .imageWrapperRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+  }
+
+  .nosotrosImg3 {
+    top: 10px;
+    width: 328px;
+    height: 285px;
+    margin-left: 0;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  .smallText2 {
+    margin-top: 10px;
+    margin-left: 0;
+    width: 100%;
   }
 }
+
 
 
