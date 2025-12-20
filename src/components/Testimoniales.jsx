@@ -17,7 +17,6 @@ const testimonios = [
 export default function Testimoniales() {
   const CARD_WIDTH = 760;
   const CENTER_INDEX = Math.floor(testimonios.length / 2);
-
   const [paginaActiva, setPaginaActiva] = useState(CENTER_INDEX);
 
   useEffect(() => {
@@ -28,7 +27,11 @@ export default function Testimoniales() {
   }, []);
 
   return (
-    <section id="TESTIMONIALES" className="relative bg-cover bg-center" style={{ backgroundImage: `url(${fondo})` }}>
+    <section
+      id="TESTIMONIALES"
+      className="relative bg-cover bg-center"
+      style={{ backgroundImage: `url(${fondo})` }}
+    >
       <div className="overflow-hidden">
 
         {/* Gradientes */}
@@ -37,57 +40,158 @@ export default function Testimoniales() {
 
         <div className="relative z-20">
 
-          {/* Header */}
-          <div className="flex flex-col items-center text-center pt-32">
-            <img src={titulo} alt="Título" className="mb-8" />
-            <h1 className="max-w-[476px] font-bold text-[35px] leading-[45px] text-white capitalize">
+          {/* ===== HEADER ===== */}
+          <div className="flex flex-col items-center text-center pt-24 md:pt-32">
+            <img
+              src={titulo}
+              alt="Título"
+              className="mb-8 w-[289px] h-[27px] md:w-auto md:h-auto"
+            />
+
+            <h1
+              className="
+                max-w-[476px]
+                font-bold
+                text-white
+                capitalize
+                text-[24px] leading-[32px]
+                md:text-[35px] md:leading-[45px]
+              "
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </h1>
           </div>
 
-          {/* Slider */}
-          <div className="mt-28 flex justify-center overflow-hidden">
-            <div className="flex transition-transform duration-700 ease-in-out"
-              style={{ transform: `translateX(${(CENTER_INDEX - paginaActiva) * CARD_WIDTH}px)` }}>
-
+          {/* ===== SLIDER ===== */}
+          <div className="mt-20 md:mt-28 flex justify-center overflow-hidden">
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{
+                transform: `translateX(${(CENTER_INDEX - paginaActiva) * CARD_WIDTH}px)`
+              }}
+            >
               {testimonios.map((item, index) => {
                 const isActive = index === paginaActiva;
+
                 return (
-                  <div key={item.id} className={`relative shrink-0 w-[684px] h-[357px] mx-[38px] rounded-[50px] overflow-hidden transition-all duration-500
-                    ${isActive ? "bg-black opacity-100 scale-100 shadow-2xl" : "bg-black/40 backdrop-blur-md opacity-60 scale-95"}`}>
-                    <img src={cliente} alt="Cliente" className="absolute top-9 left-9 w-[81px] h-[81px]" />
-                    <img src={comillas} alt="Comillas" className="absolute top-11 right-10 w-[75px]" />
-                    <p className="mt-[130px] pl-[40px] pr-[70px] italic text-[22px] leading-[35px] text-white text-left">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  <div
+                    key={item.id}
+                    className={`
+                      relative shrink-0
+                      w-[320px] h-[300px] mx-[16px]
+                      md:w-[684px] md:h-[357px] md:mx-[38px]
+                      rounded-[32px] md:rounded-[50px]
+                      overflow-hidden
+                      transition-all duration-500
+                      ${
+                        isActive
+                          ? "bg-black opacity-100 scale-100 shadow-2xl"
+                          : "bg-black/40 backdrop-blur-md opacity-60 scale-95"
+                      }
+                    `}
+                  >
+                    {/* Cliente */}
+                    <img
+                      src={cliente}
+                      alt="Cliente"
+                      className="
+                        absolute
+                        top-6 left-6
+                        w-[56px] h-[56px]
+                        md:top-9 md:left-9 md:w-[81px] md:h-[81px]
+                      "
+                    />
+
+                    {/* Comillas */}
+                    <img
+                      src={comillas}
+                      alt="Comillas"
+                      className="
+                        absolute
+                        top-7 right-6
+                        w-[48px]
+                        md:top-11 md:right-10 md:w-[75px]
+                      "
+                    />
+
+                    {/* Texto */}
+                    <p
+                      className="
+                        mt-[90px]
+                        px-[24px]
+                        italic
+                        text-white
+                        text-left
+                        text-[16px] leading-[26px]
+                        md:mt-[130px] md:px-[40px] md:pr-[70px]
+                        md:text-[22px] md:leading-[35px]
+                      "
+                    >
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
 
-                    <div className="absolute bottom-10 left-[70px] right-[70px] flex items-center justify-between">
+                    {/* Footer */}
+                    <div
+                      className="
+                        absolute bottom-6
+                        left-6 right-6
+                        flex items-center justify-between
+                        md:bottom-10 md:left-[70px] md:right-[70px]
+                      "
+                    >
                       <div>
-                        <span className="block font-semibold text-[22px] text-white">{item.nombre}</span>
-                        <span className="text-[16px] text-white">{item.rol}</span>
+                        <span className="block font-semibold text-[16px] md:text-[22px] text-white">
+                          {item.nombre}
+                        </span>
+                        <span className="text-[13px] md:text-[16px] text-white">
+                          {item.rol}
+                        </span>
                       </div>
 
-                      <div className="w-[4px] h-[40px] rounded-[10px] bg-[#34B5E5]" />
+                      <div className="w-[3px] h-[32px] md:w-[4px] md:h-[40px] rounded-[10px] bg-[#34B5E5]" />
 
-                      <div className="flex gap-2 text-[#34B5E5] text-[22px]">
-                        {[...Array(5)].map((_, i) => (<span key={i}>★</span>))}
+                      <div className="flex gap-1 md:gap-2 text-[#34B5E5] text-[16px] md:text-[22px]">
+                        {[...Array(5)].map((_, i) => (
+                          <span key={i}>★</span>
+                        ))}
                       </div>
                     </div>
 
-                    <img src={rectangulo} alt="Decoración" className={`absolute bottom-[-20px] right-[-60px] w-[200px] h-[200px] transition-all duration-500 ${isActive ? "opacity-100" : "opacity-30 blur-sm"}`} />
+                    {/* Decoración */}
+                    <img
+                      src={rectangulo}
+                      alt="Decoración"
+                      className={`
+                        absolute
+                        bottom-[-10px] right-[-30px]
+                        w-[120px] h-[120px]
+                        md:bottom-[-20px] md:right-[-60px]
+                        md:w-[200px] md:h-[200px]
+                        transition-all duration-500
+                        ${isActive ? "opacity-100" : "opacity-30 blur-sm"}
+                      `}
+                    />
                   </div>
                 );
               })}
-
             </div>
           </div>
 
-          {/* Paginación */}
-          <div className="mt-20 flex justify-center gap-3">
+          {/* ===== PAGINACIÓN ===== */}
+          <div className="mt-16 md:mt-20 flex justify-center gap-3">
             {testimonios.map((_, i) => (
-              <span key={i} onClick={() => setPaginaActiva(i)}
-                className={`cursor-pointer transition-all duration-300 rounded-[10px]
-                  ${paginaActiva === i ? "w-[66px] h-[10px] bg-[#34B5E5]" : "w-[41px] h-[7px] border border-white"}`}
+              <span
+                key={i}
+                onClick={() => setPaginaActiva(i)}
+                className={`
+                  cursor-pointer transition-all duration-300 rounded-[10px]
+                  ${
+                    paginaActiva === i
+                      ? "w-[66px] h-[10px] bg-[#34B5E5]"
+                      : "w-[41px] h-[7px] border border-white"
+                  }
+                `}
               />
             ))}
           </div>
