@@ -14,7 +14,7 @@
   top: 0;
   width: 100%;
   height: 314px;
-  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .gradient-bottom {
@@ -22,7 +22,7 @@
   bottom: 0;
   width: 100%;
   height: 214px;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
 }
 
 /* ===== CONTENEDOR ===== */
@@ -68,7 +68,7 @@
 /* ===== LAYOUT ===== */
 .espacios-layout {
   margin-top: 30px;
-  display: flex;               
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -107,7 +107,7 @@
   width: 250px;
   height: 450px;
   background: #016CB5;
-   padding: 32px 24px;
+  padding: 32px 24px;
   display: flex;
   align-items: flex-start;
 }
@@ -121,13 +121,13 @@
   width: 290px;
   height: 220px;
   background: #1E1F24;
-  padding: 28px 24px 24px 36px; 
+  padding: 28px 24px 24px 36px;
 }
 
 
 .card-text.with-line {
   position: relative;
-  padding-left: 16px; 
+  padding-left: 16px;
   font-size: 20px;
 }
 
@@ -167,10 +167,8 @@
   transform: rotate(90deg) scale(0.6);
   opacity: 0.2;
   transition: all 0.4s ease;
-  clip-path: polygon(
-    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
-    50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
-  );
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+      50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 
 .stars-out {
@@ -205,7 +203,7 @@
 
 /* ===== BOTÓN ===== */
 .buy-btn {
-    width: 50%;
+  width: 50%;
   margin-top: 12px;
   cursor: pointer;
 }
@@ -285,6 +283,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -308,7 +307,7 @@
   }
 
   .espacios-main {
-    margin: 0 auto; 
+    margin: 0 auto;
   }
 }
 
@@ -319,10 +318,10 @@
   }
 
   .espacios-section {
-    min-height: 1200px;             
-    background-size: 2500px auto;    
+    min-height: 1200px;
+    background-size: 2500px auto;
     background-position: center top;
-    height: 1100px;             
+    height: 1100px;
     background-size: 2500px auto;
   }
 
@@ -330,7 +329,7 @@
     min-height: 120vh;
   }
 
-   .espacios-container {
+  .espacios-container {
     max-width: 2000px;
   }
 
@@ -354,8 +353,8 @@
   }
 
   .espacios-title img {
-  width: 500px;
-}
+    width: 500px;
+  }
 
   .espacios-card {
     width: 340px;
@@ -383,29 +382,33 @@
 
 /* ===== PAGINACIÓN ===== */
 .pagination {
-margin-top: 80px;
-display: flex;
-justify-content: center;
-gap: 12px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  z-index: 20;
+  transform: translateY(-10px);
 }
 
 
+
 .dot {
-width: 41px;
-height: 7px;
-border-radius: 10px;
-border: 1px solid #fff;
-cursor: pointer;
-transition: all 0.3s ease;
+  width: 41px;
+  height: 7px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 
 .dot:hover,
 .dot.active {
-width: 66px;
-height: 10px;
-background: #34B5E5;
-border: none;
+  width: 66px;
+  height: 10px;
+  background: #34B5E5;
+  border: none;
 }
 
 
@@ -416,9 +419,9 @@ border: none;
     transform: scale(1.35);
   }
 
-    .espacios-title img {
-  width: 500px;
-}
+  .espacios-title img {
+    width: 500px;
+  }
 
   .espacios-section {
     min-height: 1400px;
@@ -482,6 +485,8 @@ border: none;
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 0px;
+    height: auto !important;
   }
 
   /* IMAGEN */
@@ -514,7 +519,7 @@ border: none;
 
   /* TEXTO DEL RECTÁNGULO AZUL */
   .espacios-description p {
-    font-size: 12px;       
+    font-size: 12px;
     line-height: 14px;
   }
 
@@ -523,79 +528,189 @@ border: none;
     position: relative;
     width: 50%;
     height: 120px;
-    padding: 12px 12px 12px 10px; 
+    padding: 12px 12px 12px 10px;
     top: auto;
     right: auto;
   }
 
- 
+
   .stars-wrapper {
     display: flex;
     position: absolute;
     left: -12px;
     top: 12px;
     width: 20px;
-    height: 85px;          
+    height: 85px;
     z-index: 5;
     gap: 1px;
   }
 
   .star-shape {
-    width: 15px;            
+    width: 15px;
     height: 17px;
     transform: rotate(90deg) scale(0.65);
   }
 
   /* TEXTO CARD */
   .card-text {
-    font-size: 14px !important;        
+    font-size: 14px !important;
     line-height: 16px !important;
   }
 
   /* IMAGEN CLIENTES */
   .clients img {
     margin-top: 20px;
-    width: 50%;             
+    width: 50%;
   }
 
   /* BOTÓN COMPRAR */
   .buy-btn {
-    width: 45%;            
+    width: 45%;
     margin-top: -5px;
   }
 
   .card-text.with-line::before {
-  top: 4px;
-  width: 3px;
-  height: 30px;
-  background: #D7984E;
+    top: 4px;
+    width: 3px;
+    height: 30px;
+    background: #D7984E;
+  }
+
+  .espacios-title h1 {
+    font-size: 24px;
+  }
+
+  .espacios-section {
+    min-height: auto;
+  }
+
+.espacios-section {
+  position: relative;
 }
+
 
 .pagination {
-margin-top: -100px !important;
-}
-
-.espacios-title h1{
-  font-size: 24px;
-}
-
-.espacios-section {
-  overflow: hidden;
-}
-
-.espacios-section {
-    overflow-x: hidden;
-    overflow-y: visible;
+    position: absolute;
+    bottom: 160px;          
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 100;          
+    margin: 0;
+    padding: 0;
   }
 
-   .pagination {
-    position: relative;
-    top: 50px;
-    margin-bottom: 20px;
-    z-index: 10;
-    justify-content: center;
+
+
+  .espacios-wrapper {
+    overflow: visible !important;
   }
 
-  
+  .espacios-container {
+    justify-content: flex-start;
+    padding-bottom: 120px; 
+  }
 
+ .gradient-bottom {
+  z-index: 5;
+  pointer-events: none;
+}
+
+
+}
+
+/* ===== SWIPE INDICATOR ===== */
+.swipe-indicator {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.8;
+  animation: swipePulse 1.6s infinite;
+  z-index: 50;
+}
+
+.swipe-indicator img {
+  width: 24px;
+}
+
+.swipe-indicator span {
+  font-size: 12px;
+  color: #fff;
+}
+
+/* Animación */
+@keyframes swipePulse {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+/* Helpers */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
+
+
+/* ===== SWIPE INDICATOR PREMIUM ===== */
+.swipe-indicator {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.swipe-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  animation: swipe-fade 1.8s ease-in-out infinite;
+}
+
+.swipe-pill .arrow {
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.swipe-pill .arrow.left {
+  transform: rotate(-135deg);
+}
+
+.swipe-pill .arrow.right {
+  transform: rotate(45deg);
+}
+
+.swipe-pill .hand {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  animation: hand-move 1.8s ease-in-out infinite;
 }
