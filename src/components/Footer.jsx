@@ -77,7 +77,8 @@ export default function Footer() {
     <span>Copyright © 2024 Carox. All Rights Reserved.</span>
 
     <div className={styles.bottomLinks}>
-      <span>Privacy Policy</span>
+      <span>Privacy</span>
+      <span>Policy</span>
       <span>Contact Us</span>
     </div>
   </div>
