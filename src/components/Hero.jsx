@@ -49,7 +49,7 @@ export default function Inicio() {
         <div className={styles.searchBox}>
           <input
             type="text"
-            placeholder="Tinas de hidromasajes"
+            placeholder="Buscar"
             className={styles.searchInput}
           />
           <img
