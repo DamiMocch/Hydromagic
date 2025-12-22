@@ -8,6 +8,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  padding-left: clamp(2rem, 6vw, 10rem);
+  padding-right: clamp(2rem, 6vw, 10rem);
 }
 
 .backgroundImage {
@@ -626,6 +628,5 @@
     width: 100%;
   }
 }
-
 
 
