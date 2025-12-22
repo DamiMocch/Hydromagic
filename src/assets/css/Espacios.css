@@ -491,7 +491,7 @@
 
   /* IMAGEN */
   .espacios-image {
-    margin-top: -20px;
+    margin-top: 5px;
     width: 100%;
     height: auto;
     display: block;
@@ -502,7 +502,7 @@
     display: none;
   }
 
-  /* FILA UNIDA (AZUL + CARD) */
+
   .espacios-mobile-row {
     display: flex;
     width: 100%;
@@ -713,4 +713,16 @@
   border-radius: 50%;
   background: #fff;
   animation: hand-move 1.8s ease-in-out infinite;
+}
+
+.espacios-title h1{
+font-family: Palatino Linotype;
+font-weight: 700;
+font-style: Bold;
+font-size: 24px;
+leading-trim: NONE;
+line-height: 120%;
+letter-spacing: 0%;
+text-transform: capitalize;
+
 }
