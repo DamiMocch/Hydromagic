@@ -4,6 +4,7 @@
   height: 100vh;
   overflow: hidden;
   margin-top: 0rem;
+  height: min(100vh, 900px);
 }
 
 
@@ -53,14 +54,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
+
+  max-width: clamp(320px, 90vw, 1600px);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 5rem);
+
   text-align: center;
 }
 
-/* Logo */
+
+
 .logo {
-  width: 160px;
-  margin-bottom: 2rem;
+  width: clamp(120px, 12vw, 240px);
+  margin-bottom: clamp(1.5rem, 3vw, 3rem);
 }
 
 
@@ -68,28 +74,31 @@
   color: white;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-weight: 700;
-  font-size: 52px;
-  line-height: 120%;
-  text-transform: capitalize;
-  max-width: 80rem;
+
+  font-size: clamp(36px, 4.5vw, 76px);
+  line-height: 1.15;
+
+  max-width: clamp(320px, 80vw, 1200px);
+  margin-inline: auto;
 }
 
+
 .subtitle {
-  margin-top: 1rem;
+  margin-top: clamp(1rem, 2vw, 2rem);
   color: white;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-weight: 700;
-  font-size: 15px;
-  line-height: 120%;
-  max-width: 48rem;
+  font-size: clamp(14px, 1.3vw, 20px);  line-height: 120%;
+  max-width: clamp(320px, 60vw, 800px);
+  line-height: 1.5;
 }
 
 
 .searchBox {
-  margin-top: 3rem;
-  width: 320px;
+  margin-top: clamp(2rem, 4vw, 4rem);
   max-width: 100%;
-  height: 40px;
+  width: clamp(260px, 30vw, 420px);
+  height: clamp(40px, 4vw, 52px);
   display: flex;
   align-items: center;
   padding: 8px 16px;
@@ -120,6 +129,7 @@
   border: none;
   outline: none;
   color: white;
+  font-size: clamp(13px, 1vw, 16px);
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
@@ -128,19 +138,19 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Botones */
+
 .buttons {
-  margin-top: 2rem;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
   display: flex;
-  gap: 24px;
+  gap: clamp(16px, 3vw, 32px);
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .button {
-  width: 130px;
-  height: 40px;
-  font-size: 12px;
+  width: clamp(130px, 14vw, 200px);
+  height: clamp(40px, 4vw, 52px);
+  font-size: clamp(12px, 1vw, 16px);
   padding: 5px 20px;
   border-radius: 100px;
   color: #34B5E5;
@@ -168,6 +178,23 @@
   color: #FFFFFF;
 }
 
+@media (min-width: 1920px) {
+  .header {
+    height: 900px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .content {
+    max-width: 1800px;
+  }
+
+  .title {
+    font-size: 80px;
+  }
+}
+
+
 @media (max-width: 768px) {
 
   .background {
@@ -175,7 +202,7 @@
   }
 
   .content {
-    margin-top: 40px;
+    margin-top: -50px;
     padding: 0 1.5rem;
     justify-content: center;
   }
@@ -199,7 +226,7 @@
     max-width: 90%;
   }
 
-  /* ===== SEARCH ===== */
+
   .searchBox {
     margin-top: 50px;
     width: 270px;
@@ -215,7 +242,6 @@
     font-size: 13px;
   }
 
-  /* ===== BOTONES ===== */
   .buttons {
     
     flex-direction: column; 
@@ -234,7 +260,7 @@
     height: 220px;
   }
 
-    /* CUADRO NEGRO EXTRA INFERIOR */
+   
   .mobile-black-extension {
     position: absolute;
     bottom: -181px;           
@@ -243,5 +269,79 @@
     height: 181px;
     background: #000000;
     opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root {
+  --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+.logo {
+  animation: fadeUp 1.2s var(--apple-ease) forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+
+.title {
+  animation: fadeUp 1.2s var(--apple-ease) forwards;
+  animation-delay: 0.35s;
+  opacity: 0;
+}
+
+.subtitle {
+  animation: fadeUp 1.2s var(--apple-ease) forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+
+.searchBox {
+  animation: fadeUp 1.2s var(--apple-ease) forwards;
+  animation-delay: 0.65s;
+  opacity: 0;
+}
+
+
+.buttons {
+  animation: fadeUp 1.2s var(--apple-ease) forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}
+
+.button {
+  opacity: 0;
+  animation: fadeUp 1s var(--apple-ease) forwards;
+}
+
+.button:nth-child(1) { animation-delay: 0.9s; }
+.button:nth-child(2) { animation-delay: 1.05s; }
+.button:nth-child(3) { animation-delay: 1.2s; }
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
