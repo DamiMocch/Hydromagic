@@ -53,12 +53,12 @@ export default function Nosotros() {
             </div>
 
             {/* Línea */}
-            <div className={styles.dividerWrapper}>
+            <div className={`${styles.dividerWrapper} ${styles.ultraContainer}`}>
                 <img src={linea} alt="Linea" className={styles.linea} />
             </div>
 
             {/* Tarjetas */}
-            <div className={styles.cards}>
+            <div className={`${styles.cards} ${styles.ultraContainer}`}>
                 {cards.map((card, index) => (
                     <div key={index} className={styles.card}>
                         <img src={card.image} alt={card.title} className={styles.cardImage} />
@@ -70,7 +70,7 @@ export default function Nosotros() {
             </div>
 
             {/* Contenido principal */}
-            <div className={styles.nosotrosContainer}>
+            <div className={`${styles.nosotrosContainer} ${styles.ultraContainer}`}>
                 {/* IZQUIERDA */}
                 <div className={styles.left}>
                     <img src={nosotros4} alt="Nosotros" className={styles.nosotrosTitleImg} />
