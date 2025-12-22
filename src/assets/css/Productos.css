@@ -1,9 +1,20 @@
+:root {
+  --container-max: 1680px;
+  /* límite visual premium */
+  --container-padding: clamp(1.5rem, 4vw, 6rem);
+}
 
 .productos-section {
   position: relative;
   background: #000;
-  padding: 160px 0;
+  padding: clamp(120px, 12vh, 200px) 0;
   overflow: hidden;
+}
+
+.productos-section>* {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
 }
 
 /* ===== FONDO ===== */
@@ -13,14 +24,14 @@
   top: 45%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: -1;        
+  z-index: -1;
 }
 
 
 /* ===== ELIPSES DE FONDO ===== */
 .elipse {
   position: absolute;
-  z-index: 0;          
+  z-index: 0;
   pointer-events: none;
   opacity: 0.9;
 }
@@ -51,8 +62,8 @@
 }
 
 .productos-header img {
-  width: 251px;
-  margin-bottom: 40px;
+  width: clamp(260px, 18vw, 420px);
+  margin-bottom: clamp(32px, 4vh, 56px);
 }
 
 .productos-header h2 {
@@ -68,17 +79,26 @@
 
 .productos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 380px);
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit,
+      minmax(clamp(360px, 22vw, 440px), 1fr));
+  gap: clamp(32px, 3vw, 56px);
   justify-content: center;
+}
+
+
+.productos-desktop {
+  position: relative;
+  overflow-x: clip;
+  width: 100%;
 }
 
 
 /* ===== CARD GLASS APPLE ===== */
 .producto-card.glass {
-    border-color: #016CB5;
-  width: 380px;
-  height: 480px;
+  border-color: #016CB5;
+  width: 100%;
+  max-width: clamp(360px, 24vw, 440px);
+  height: clamp(480px, 55vh, 560px);
 
   display: flex;
   flex-direction: column;
@@ -91,11 +111,9 @@
   border-width: 1.1px;
   border-style: solid;
 
-  background: linear-gradient(
-    214.25deg,
-    rgba(135, 41, 41, 0.032) 6.73%,
-    rgba(0, 0, 0, 0.012) 100.28%
-  );
+  background: linear-gradient(214.25deg,
+      rgba(135, 41, 41, 0.032) 6.73%,
+      rgba(0, 0, 0, 0.012) 100.28%);
 
   border-image-source:
     radial-gradient(69.43% 69.43% at 50% 50%,
@@ -116,7 +134,8 @@
 
   box-shadow: 0px 9.9px 13.2px #00000029;
 
-  overflow: hidden; 
+  overflow: hidden;
+
 }
 
 
@@ -130,11 +149,9 @@
   position: absolute;
   inset: 0;
   border-radius: 20px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.18),
-    rgba(255, 255, 255, 0.02)
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 255, 255, 0.02));
   pointer-events: none;
 }
 
@@ -146,11 +163,11 @@
   left: 20px;
   display: flex;
   gap: 10px;
-  z-index: 4; 
+  z-index: 4;
 }
 
 .badge-img {
-  width: auto; 
+  width: auto;
   height: auto;
 }
 
@@ -176,11 +193,11 @@
 /* ===== IMAGEN ===== */
 .producto-img {
   width: 100%;
-  height: 220px;
+  height: clamp(200px, 24vh, 260px);
   object-fit: contain;
   display: block;
 
-  margin: -10px auto 0;   
+  margin: -10px auto 0;
   position: relative;
   z-index: 2;
 }
@@ -196,11 +213,11 @@
 
 .producto-info {
   color: #fff;
-  margin-bottom: 16px; 
+  margin-bottom: 16px;
 }
 
 .producto-info h3 {
-  font-size: 22px;
+  font-size: clamp(20px, 1.2vw, 26px);
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -224,15 +241,15 @@
 
 
 .precio-text {
-  font-size: 16px;
+  font-size: clamp(15px, 1vw, 18px);
 }
 
 .features {
   color: #fff;
-  font-size: 16px;
+  font-size: clamp(14px, 0.9vw, 16px);
   display: flex;
   flex-direction: column;
-  gap: 8px;           
+  gap: 8px;
   margin-bottom: 20px;
 }
 
@@ -341,7 +358,7 @@
 
 /* ===== SLIDER LIMPIO ===== */
 .productos-slider {
-  overflow: hidden; 
+  overflow: hidden;
   display: flex;
   justify-content: center;
 }
@@ -364,8 +381,9 @@
   min-width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0 16px; 
+  box-sizing: border-box;
 }
+
 
 /* ===== DESKTOP ===== */
 .productos-desktop {
@@ -393,6 +411,19 @@
   height: 480px;
 }
 
+@media (max-width: 1440px) {
+  .productos-grid {
+    grid-template-columns: repeat(3, minmax(340px, 1fr));
+    gap: 32px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .productos-grid {
+    grid-template-columns: repeat(2, minmax(360px, 1fr));
+  }
+}
+
 
 @media (max-width: 768px) {
 
@@ -403,21 +434,21 @@
 
   /* ===== SLIDER ===== */
   .productos-slider {
-    width: 100%;
+    padding: 0;
     overflow: hidden;
-    padding: 0 24px; 
   }
 
   .productos-track {
-    display: flex;
-    transition: transform 0.6s ease;
-  }
+  display: flex;
+  width: 100%;
+  will-change: transform;
+}
+
 
   .productos-page {
     min-width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 0 12px; 
+    padding-inline: 22px; 
+    box-sizing: border-box;
   }
 
   /* ===== GRID → SOLO 1 CARD ===== */
@@ -437,13 +468,13 @@
     display: flex;
   }
 
- 
+
   .producto-card.glass {
-    max-width: 320px;
     width: 100%;
-    height: 480px;
+    max-width: 100%;
     margin: 0 auto;
   }
+
   /* IMAGEN */
   .producto-img {
     top: 20px;
@@ -468,7 +499,7 @@
   .medidas {
     width: calc(90% + 70px);
     height: 45px;
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .pagination {
@@ -476,28 +507,28 @@
   }
 
   .productos-header h2 {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 30px;
-  text-align: center;
-  color: #fff;
-}
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+  }
 
 
-.elipse-arriba {
-  width: 250%;
-  top: -5%;
-  left: -100px;
-}
+  .elipse-arriba {
+    width: 250%;
+    top: -5%;
+    left: -100px;
+  }
 
 
-.elipse-abajo {
-  width: 200%;
-  bottom: -8%;
-  right: -100px;
-}
+  .elipse-abajo {
+    width: 200%;
+    bottom: -8%;
+    right: -100px;
+  }
 
-.productos-desktop {
+  .productos-desktop {
     display: none;
   }
 
@@ -510,7 +541,7 @@
 }
 
 
-/* ===== SWIPE INDICATOR PREMIUM ===== */
+
 .swipe-indicator {
   position: absolute;
   top: 55%;
@@ -567,13 +598,64 @@
 
 /* Animaciones */
 @keyframes hand-move {
-  0% { transform: translateX(0); opacity: 0.6; }
-  50% { transform: translateX(8px); opacity: 1; }
-  100% { transform: translateX(0); opacity: 0.6; }
+  0% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateX(8px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
 }
 
+@media (min-width: 2560px) {
+  .productos-header img {
+    width: 560px;
+  }
+}
+
+
 @keyframes swipe-fade {
-  0% { opacity: 0.4; }
-  50% { opacity: 1; }
-  100% { opacity: 0.4; }
+  0% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --container-max: 1800px;
+  }
+}
+
+
+@media (min-width: 1920px) {
+  :root {
+    --container-max: 2000px;
+  }
+}
+
+
+@media (min-width: 2560px) {
+  :root {
+    --container-max: 2200px;
+    --container-padding: clamp(3rem, 8vw, 10rem);
+  }
+}
+
+.ultrawide .productos-section {
+  padding-inline: clamp(4rem, 10vw, 12rem);
 }
