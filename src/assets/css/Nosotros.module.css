@@ -630,3 +630,10 @@
 }
 
 
+@media (min-width: 3500px) {
+  .section {
+    min-height: 75vh;  
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
